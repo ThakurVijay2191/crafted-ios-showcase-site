@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -72,8 +73,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             GitHub
           </Button>
         )}
-        <Button className="ml-auto bg-ios-blue hover:bg-ios-darkblue">
-          View Details
+        <Button 
+          className="ml-auto bg-ios-blue hover:bg-ios-darkblue"
+          asChild
+        >
+          <Link to={`/project/${project.id}`}>View Details</Link>
         </Button>
       </CardFooter>
     </Card>
